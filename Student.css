@@ -1,0 +1,87 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+.flex{
+    display: flex;
+}
+a{
+    text-decoration: none;
+    color: black;
+    text-wrap:nowrap;
+}
+nav{
+    width:100%;
+    padding:12px;
+    background-color: lightcoral;
+    position: fixed;
+    z-index: 11;
+}
+.navbar1{
+    justify-content: space-between;
+    align-items: center;
+}
+.icon{
+padding:0 10px ;
+font-size: 1.1rem;
+}
+li{
+ list-style: none;
+}
+nav .poster{
+font-size: 1.8rem;
+}
+
+.icon1{
+    gap:15px;
+}
+
+/* hero section */
+.hero{
+    width:100%;
+}
+.hero-image{
+    position: relative;
+    width:100%;
+}
+.hero-image img{
+    width: 100%;
+    height:auto;
+    object-fit: cover;
+    filter: blur(10px);
+}
+.hero-content{
+    position: absolute;
+    top:50%;
+    left:50%;
+    z-index: 1;
+    width:35%;
+    padding:12px;
+    margin: auto;
+    transform: translate(-50% ,-70%);
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+.hero-content h1{
+    text-align: center;
+}
+.hero-content .data{
+    padding-top: 10px;
+}
+
+@media(max-width:991px){
+    .hero-content{
+        width:50%;
+    }
+}
+
+/* login form */
+.login{
+    width:35%;
+    margin: 0 auto;
+    margin-top:40px;
+}
+
+
