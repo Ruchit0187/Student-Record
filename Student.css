@@ -6,11 +6,15 @@
 .flex{
     display: flex;
 }
+html{
+    scroll-behavior: smooth;
+}
 a{
     text-decoration: none;
     color: black;
     text-wrap:nowrap;
 }
+
 nav{
     width:100%;
     padding:12px;
@@ -59,7 +63,7 @@ font-size: 1.8rem;
     width:35%;
     padding:12px;
     margin: auto;
-    transform: translate(-50% ,-70%);
+    transform: translate(-50% ,-60%);
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
@@ -68,6 +72,7 @@ font-size: 1.8rem;
     text-align: center;
 }
 .hero-content .data{
+    line-height: 1.5;
     padding-top: 10px;
 }
 
@@ -79,9 +84,65 @@ font-size: 1.8rem;
 
 /* login form */
 .login{
-    width:35%;
-    margin: 0 auto;
-    margin-top:40px;
+    width:30%;
+    margin: 40px auto;
 }
-
-
+.login-form{
+    padding:20px;
+    border: 0px solid black;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+.login-form2{
+    flex-direction: column;
+    padding:10px 0;
+    gap:10px
+}
+.login-form2 input[type='text']{
+    border-radius: 7px;
+    padding:10px;
+}
+.login-form2 input[type='text']::placeholder{
+    color:red;
+    font-size: 1rem;
+}
+.login-form2 .password{
+    position: relative;
+}
+.login-form2 input[type="password"]{
+    width:100%;
+    border-radius: 7px;
+    padding:10px
+}
+.login-form2 input[type="text"]{
+    width:100%;
+    border-radius: 7px;
+    padding:10px
+}
+.login-form2 label{
+    font-size:1.3rem;
+    font-weight: 900;
+}
+.login-form2 .password i{
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    justify-content:flex-start;
+    text-align: end;
+    cursor: pointer;
+    right:10px;
+    font-size: 1.2rem;
+    top:10px
+}
+.login-form2 input[type='password']::placeholder{
+    color:red;
+    font-size: 1rem;
+}
+.login-form2 button{
+    width:20%;
+    margin: auto;
+    margin-top: 10px;
+    padding:10px;
+    border-radius: 10px;
+    font-size: medium;
+}
