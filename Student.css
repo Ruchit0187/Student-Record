@@ -21,6 +21,7 @@ nav{
     background-color: lightcoral;
     position: fixed;
     z-index: 11;
+    top:0;
 }
 .navbar1{
     justify-content: space-between;
@@ -44,6 +45,7 @@ font-size: 1.8rem;
 /* hero section */
 .hero{
     width:100%;
+    overflow: hidden;
 }
 .hero-image{
     position: relative;
@@ -98,12 +100,15 @@ font-size: 1.8rem;
     padding:10px 0;
     gap:10px
 }
+.login-form2 h1{
+    text-align: center;
+}
 .login-form2 input[type='text']{
     border-radius: 7px;
     padding:10px;
 }
 .login-form2 input[type='text']::placeholder{
-    color:red;
+    /* color:red; */
     font-size: 1rem;
 }
 .login-form2 .password{
@@ -119,7 +124,7 @@ font-size: 1.8rem;
     border-radius: 7px;
     padding:10px
 }
-.login-form2 label{
+ label{
     font-size:1.3rem;
     font-weight: 900;
 }
@@ -135,10 +140,68 @@ font-size: 1.8rem;
     top:10px
 }
 .login-form2 input[type='password']::placeholder{
-    color:red;
+    /* color:red; */
     font-size: 1rem;
-}
+}   
 .login-form2 button{
+    width:20%;
+    margin: auto;
+    margin-top: 10px;
+    padding:10px;
+    border-radius: 10px;
+    font-size: medium;
+}
+.check1 , .check2,.check3,.check4,.check5{
+    color:red;
+}
+button:hover{
+    background-color: aliceblue;
+    font-weight: 600;
+}
+
+/* contact us */
+.contact{
+    width:30%;
+    margin: 40px auto;
+}
+.contact-form{
+     padding:20px;
+    border: 0px solid black;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+.contact-form2 h1{
+    text-align: center  ;
+}
+.contact-form2{
+    flex-direction: column;
+    padding: 20px;
+    gap:10px;
+}
+.contact-form2 input[type="text"]{
+    width:100%;
+    border-radius: 7px;
+    padding:10px
+}
+.contact-form2 input[type="email"]{
+    width:100%;
+    border-radius: 7px;
+    padding:10px
+}
+.contact-form2 textarea{
+    width:100%;
+    padding:10px;
+    border-radius:7px ;
+    border:1px solid black;
+    font-weight: 500;
+}
+.contact-form2 .hidden{
+    color:green
+}
+/* .contact-form2 .hidden2{
+    color:green;
+} */
+.contact-form2 button{
     width:20%;
     margin: auto;
     margin-top: 10px;
