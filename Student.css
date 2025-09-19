@@ -154,10 +154,12 @@ font-size: 1.8rem;
 .check1 , .check2,.check3,.check4,.check5{
     color:red;
 }
-button:hover{
-    background-color: aliceblue;
+
+.csubmit:hover,.log:hover{
+     background-color: aliceblue;
     font-weight: 600;
 }
+
 
 /* contact us */
 .contact{
@@ -208,4 +210,118 @@ button:hover{
     padding:10px;
     border-radius: 10px;
     font-size: medium;
+}
+
+
+/* student Performance */
+.student-data{
+    width:100%;
+    margin:0 auto;
+    padding:12px;
+    margin:12px 0;
+}
+.student-data h1{
+    margin: 10px 0;
+}
+.summery{
+    width:40%;
+    background-color: lightcyan;
+    border-radius: 10px;
+    padding:12px 
+}
+.summery h3{
+    margin: 10px 0;
+    font-weight: 700;
+}
+
+.feature{
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+.feature1{
+    width: 50%;
+    justify-content: space-between;
+    align-items: center;
+}
+.grade{
+    gap:10px;
+    align-items: center;
+    width:40%;
+}
+
+.grade p{
+    font-weight: 700;
+    text-wrap: nowrap;
+}
+.grade select{
+    padding: 10px;
+    font-weight: 700;
+    border:1px solid black;
+    border-radius: 10px;
+    width: 70%;
+}
+.search p{
+    font-weight: 700;
+}
+.search input{
+    padding:10px;
+    border-radius: 10px;
+    
+}
+.search{
+    align-items: center;
+    gap:10px;
+}
+
+.feature2{
+    justify-content: space-between;
+    width: 30%;
+}
+.feature button{
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    background-color: lightskyblue;
+
+}
+.feature2 .inc::after{
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0px 5px 8.7px 5px;
+    border-color: transparent transparent #000000 transparent
+}
+.feature2 .des::after{
+    content: " ";
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+    border-width: 8.7px 5px 0px 5px;
+    border-color: #000000 transparent transparent transparent;
+}
+.reset{
+    margin-right: 10px;
+}
+.student-tabel{
+    padding: 12px;
+}
+table{
+    width:100%;
+}
+td{
+    text-align: left;
+    padding: 10px;
+}
+.table-head td{
+    background-color: rgb(41, 228, 228);
+    padding:12px;
+    text-align: center;
+    font-weight: 1000;
+    border-radius: 10px;
+    font-size: 1.1rem;
 }

@@ -2,7 +2,7 @@ const userid=document.querySelector("#userid");
 const password=document.querySelector("#password");
 const loginbtn =document.querySelector(".btn");
 const eye=document.querySelector(".eye");
-const submit=document.querySelector(".submit");
+const submit=document.querySelector(".csubmit");
 const contactName=document.querySelector("#name");
 const contactEmail=document.querySelector("#email");
 const description=document.querySelector("#description")
@@ -12,7 +12,13 @@ const check2=document.querySelector(".check2")
 const check3=document.querySelector(".check3")
 const check4=document.querySelector(".check4")
 const check5=document.querySelector(".check5")
-
+const select=document.querySelector("#select")
+const table=document.querySelector("table")
+const tbody=document.querySelector("tbody")
+const classAvg=document.querySelector(".classAvg")
+const highest=document.querySelector(".highest")
+const lowest=document.querySelector(".lowest")
+const search=document.querySelector(".search")
 let checker=true
 localStorage.setItem("Admin",123456)
 localStorage.setItem("admin2",789654)
@@ -70,7 +76,7 @@ function loginform(){
 // contact us 
 submit.addEventListener('click',(e)=>{
     e.preventDefault();
-    contactusform()
+    contactusform();
 })
 function contactusform(){
    let inputname=contactName.value;
@@ -81,28 +87,125 @@ function contactusform(){
         contactName.value=''
         // contactName.placeholder="enter full name"
         check3.innerText="Enter The Name"
+        return
    }
    let emailregx=/^[0-9a-z+.-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
    if(!emailregx.test(inputEmail)){
         contactEmail.value=''
         // contactEmail.placeholder="enter valid Email"
         check4.innerText="Enter a valid Email"
+        return
    }
    if(inputEmail===""){
     check4.innerText="Enter the Email ID"
-   }
-   if(description.value===""){
-    check5.innerText="Enter the Description"
+    return
    }
    let descriptionsp=description.value.trim();
    descriptionsp=descriptionsp.split(' ')
    if(descriptionsp.length<10){
     check5.innerText="Please Enter the minimum 10 words"
+    return
+   }
+   if(description.value===""){
+    check5.innerText="Enter the Description"
+    return
    }
    if(inputname!=="" && inputEmail!=="" && description!==""){
     hidden.removeAttribute("hidden");
    }
 }
-contactName.addEventListener('click',()=>check3.innerText='')
-contactEmail.addEventListener('click',()=>check4.innerText='');
+contactName.addEventListener('click',()=>check3.innerText="")
+contactEmail.addEventListener('click',()=>check4.innerText="");
 description.addEventListener('click',()=>check5.innerText="")
+
+// student data score sheet
+let classavg=0
+for(let i=0;i<dataArray.length;i++){
+     let average=dataArray[i]['scores']
+     let sum=average.reduce((acc,curr)=>acc+curr,0)
+     average=sum/average.length;
+     dataArray[i].avg=average;
+     classavg=classavg+dataArray[i].avg;
+     if(average>=90){
+        dataArray[i].grade="A"
+     }
+     else if(average<89 && average>=75){
+        dataArray[i].grade="B"
+     }
+     else if(average<75 && average>=60){
+        dataArray[i].grade="C"
+     }
+     else if(average>50 && average<=59){
+        dataArray[i].grade="D"
+     }
+     else{
+        dataArray[i].grade="F"
+     }
+}
+classAvg.innerText=`Class Average :${(classavg/dataArray.length).toFixed(2)}` 
+let classHigher=dataArray.map((i)=>i.avg);
+classHigher=Math.max(...classHigher)
+let classHigherName=dataArray.filter((i)=>i.avg===classHigher);
+highest.innerText=`Class Higgest: ${classHigherName[0].name} average is ${classHigher}`
+let classLower=dataArray.map((i)=>i.avg);
+classLower=Math.min(...classLower);
+let classLowerName=dataArray.filter((i)=>i.avg===classLower);
+lowest.innerText=`Class Lowest: ${classLowerName[0].name} average is ${classLower}`
+
+if(select.value==="All") printAllRows();
+select.addEventListener("change",(e)=>{
+    printRows(e);
+})
+
+function printAllRows(){
+    tbody.innerHTML=''
+    for(let i=0;i<dataArray.length;i++){
+    let tr=document.createElement('tr');
+    tr.innerHTML=`<tr>
+    <td>${dataArray[i].name}</td>
+     <td>${dataArray[i].id}</td>
+      <td>${dataArray[i].email}</td>
+       <td>${dataArray[i].gender}</td>
+        <td>${dataArray[i].scores}</td>
+         <td>${dataArray[i].avg}</td>
+         <td>${dataArray[i].grade}</td>
+    </tr>`
+    tbody.appendChild(tr);
+   }
+}
+function printRows(e){
+    if(e.target.value==="All"){
+        printAllRows();
+        return
+    }
+    else{
+       let value=e.target.value;
+       if(value==="AB"){
+         let valueAB=dataArray.filter((i)=>i.grade==="A" || i.grade==="B");
+         printdata(valueAB)
+       }
+       else{
+        printdata(dataArray.filter((i)=>i.grade===value))
+       }
+    }
+}
+
+function printdata(data){
+    tbody.innerHTML=''
+    for(let i=0;i<data.length;i++){
+    let tr=document.createElement('tr');
+    tr.innerHTML=`<tr>
+    <td>${data[i].name}</td>
+     <td>${data[i].id}</td>
+      <td>${data[i].email}</td>
+       <td>${data[i].gender}</td>
+        <td>${data[i].scores}</td>
+         <td>${data[i].avg}</td>
+         <td>${data[i].grade}</td>
+    </tr>`
+    tbody.appendChild(tr);
+   }
+}
+search.addEventListener("click",(e)=>{
+    
+})
