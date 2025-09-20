@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
-    />
+    /> -->
     <link rel="stylesheet" href="Student.css" />
   </head>
   <body>
@@ -24,26 +24,16 @@
         </div>
       </div>
     </nav>
-    <section class="hero" id="hero">
-      <div class="hero-image">
-        <img src="hero-section.jpg" alt="" />
-      </div>
-      <div class="hero-content">
-        <h1>Student Score Related Discussion</h1>
-        <div class="data">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi
-          voluptatum doloribus dolorum odit architecto voluptate iste amet hic
-          nesciunt? Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-          Eos ullam maiores non facere unde ut cum asperiores ratione molestiae
-          voluptates Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-          Laboriosam qui officia tempore possimus et optio ab maxime aspernatur
-          omnis dolore, necessitatibus vel, eaque ut magnam vitae, quae beatae
-          consequuntur! Laudantium recusandae iusto velit necessitatibus,
-          asperiores inventore reiciendis vero voluptate minus, corporis hic rem
-          ex ab, sit molestias enim ea aspernatur.
-        </div>
+   <!-- hero section -->
+    <section class="hero flex" id="hero">
+      <div class="photo">
+        <div class="box">
+          <h1>Student Performance</h1>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, iusto repellat quas nihil at aspernatur repellendus aliquid veritatis excepturi consequuntur dolorem dolores obcaecati fugiat itaque laudantium nam vitae ducimus expedita ullam velit sed, ipsa ab? Corporis tenetur id quod maiores vero quae dolorum, beatae eum autem ducimus, cum quasi dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, eos!</div>
       </div>
     </section>
+    
+   <!-- login page -->
     <section class="login" id="login">
       <div class="login-form">
         <form action="" class="login-form2 flex">
@@ -72,7 +62,7 @@
       </div>
     </section>
     <!-- student performance data showing -->
-    <section class="student-data">
+    <section class="student-data" hidden >
       <h1>Student Performance</h1>
       <div class="summery">
         <h3>Score Summery</h3>
@@ -95,7 +85,7 @@
             </select>
           </div>
           <div class="search flex">
-            <p>Search By Name:</p> <input type="text" placeholder="Type a Name" class="search" />
+            <p>Search By Name:</p> <input type="text" placeholder="Type a Name" class=" search2" />
           </div>
         </div>
         <div class="flex feature2">
@@ -105,7 +95,7 @@
             <button class="des"hidden>Decresing</button>
           </div>
           <div class="reset">
-            <button class="reset">Reset Filter</button>
+            <button class="reset-btn">Reset Filter</button>
           </div>
         </div>
       </div>
@@ -123,6 +113,7 @@
             <tbody></tbody>
         </table>
       </div>
+      <button class="logout">Logout</button>
     </section>
     <section class="contact" id="contact">
       <div class="contact-form">
